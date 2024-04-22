@@ -12,10 +12,10 @@
 # Calibration Settings
 # --------------------
 CALIBRATE_ON = True       # Create a calibration image file with calibration hash markers 10 px per mark
-CAL_OBJ_PX_L2R = 80       # L2R Moving Objects, Length of a calibration object in pixels
-CAL_OBJ_MM_L2R = 4700     # L2R Moving Objects, Length of the calibration object in millimetres
-CAL_OBJ_PX_R2L = 85       # R2L Moving Objects, Length of a calibration object in pixels
-CAL_OBJ_MM_R2L = 4700     # R2L Moving Objects, Length of the calibration object in millimetres
+CAL_OBJ_PX_L2R = 35       # L2R Moving Objects, Length of a calibration object in pixels
+CAL_OBJ_MM_L2R = 20     # L2R Moving Objects, Length of the calibration object in millimetres
+CAL_OBJ_PX_R2L = 35       # R2L Moving Objects, Length of a calibration object in pixels
+CAL_OBJ_MM_R2L = 20     # R2L Moving Objects, Length of the calibration object in millimetres
 # Note if tested speed is too low increase appropriate cal_obj_mm  value and redo speed test for desired direction.
 # IMPORTANT - If plugins Enabled Edit Settings in specified plugin file located in plugins folder.
 
@@ -38,7 +38,7 @@ PLUGIN_NAME = "picam240"  # Specify filename in plugins subfolder without .py ex
 SHOW_SETTINGS_ON = False  # True Displays the config.py file on startup
 LOG_VERBOSE_ON = True     # True= Display basic status information on console False= Off
 LOG_DATA_TO_CSV = False   # True= Save log data as CSV comma separated values  False= Off
-LOG_TO_FILE_ON = False    # True= Send logging to file False= No Logging to File
+LOG_TO_FILE_ON = True    # True= Send logging to file False= No Logging to File
 LOG_FILE_PATH = 'speed-cam.log'  # Location of log file when LOG_TO_FILE_ON=True
 LOG_FPS_ON = False        # True= Show average frame count every 1000 loops False= Off
 
@@ -66,7 +66,7 @@ IM_JPG_QUALITY = 98              # Set the quality of the jpeg. Default = 95
 IM_JPG_OPTIMIZE_ON = True        # Optimize the image. Default = False
                                  # https://docs.opencv.org/3.4/d8/d6a/group__imgcodecs__flags.html#ga292d81be8d76901bff7988d18d2b42ac
 IM_SHOW_SPEED_FILENAME_ON = True # True= Include speed value in filename
-IM_SHOW_CROP_AREA_ON = False     # True= Display motion detection rectangle area on saved images
+IM_SHOW_CROP_AREA_ON = True     # True= Display motion detection rectangle area on saved images
 IM_BIGGER = 3.0                  # Default= 3.0 min=0.1 Resize saved speed image by specified multiplier value
 IM_SHOW_TEXT_ON = True           # True= Show Text on speed images   False= No Text on images
 IM_SHOW_TEXT_BOTTOM_ON = True    # True= Show image text at bottom otherwise at top
@@ -116,14 +116,14 @@ MO_MAX_SPEED_OVER = 0       # Exclude track if Speed less than or equal to value
 # Set ALIGN_CAM_ON = True to help with adjusting settings.
 MO_CROP_AUTO_ON = False       # True enables rough Auto Calculation of Motion Crop Area
 MO_CROP_X_LEFT = 50           # Default=50
-MO_CROP_X_RIGHT = 250         # Default=250
+MO_CROP_X_RIGHT = 300         # Default=250
 MO_CROP_Y_UPPER = 90          # Default=90
 MO_CROP_Y_LOWER = 150         # Default=150
 
 # Display opencv windows on GUI desktop
 # GUI_WINDOW_ON suppresses All Windows if False
 # ----------------------------------------------
-GUI_WINDOW_ON = False     # True= Turn On All desktop GUI openCV windows. False=Don't Show (req'd for SSH) .
+GUI_WINDOW_ON = True     # True= Turn On All desktop GUI openCV windows. False=Don't Show (req'd for SSH) .
 GUI_IMAGE_WIN_ON = True   # True=Show the camera on a gui windows. False=Don't Show (useful for image_sign)
 GUI_THRESH_WIN_ON = False # True=Show openCV cropped BLUR, THRESHOLD grayscale image window. Used for detecting movement contours
 GUI_CROP_WIN_ON = False   # True=Show crop window. Same as GUI_THRESH_WIN_ON but in color.
@@ -132,7 +132,7 @@ CV_CIRCLE_SIZE_PX = 5         # Default= 5 Diameter circle in px if CV_SHOW_CIRC
 CV_LINE_WIDTH_PX = 1          # Default= 1 Size of lines for circle or Rectangle
 CV_WINDOW_BIGGER = 1.0        # Default= 1.0 min=0.1 Resize multiplier for opencv window if GUI_WINDOW_ON=True
 BLUR_SIZE = 10                # Default= 10 OpenCV setting for Gaussian difference image blur
-THRESHOLD_SENSITIVITY = 20    # Default= 20 OpenCV setting for difference image threshold
+THRESHOLD_SENSITIVITY = 5    # Default= 20 OpenCV setting for difference image threshold
 
 # Optional Manage SubDir Creation by time, number of files or both (not recommended)
 # ----------------------------------------------------------------

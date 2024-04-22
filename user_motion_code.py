@@ -1,3 +1,5 @@
+
+import http.client, urllib
 """
 This module will be imported into speed-cam.py and will
 execute the userMotionCode function after
@@ -14,7 +16,7 @@ program when motion tracking is tiggered.
 """
 
 #------------------------------------------------------------------------------
-def userMotionCode(vs, image_width, image_height, filenamePath):
+def userMotionCode(vs, image_width, image_height, filenamePath, travel_direction):
     """
     Users can put code here that needs to be run
     after speed camera motion tracking and image taken
@@ -27,6 +29,20 @@ def userMotionCode(vs, image_width, image_height, filenamePath):
         user_motion_code.userMotionCode(filename)
 
     """
-    # Insert User python code Below
-    # print("User Code Executing from userMotionCode function")
-    # print("file path is %s" % filenamePath)
+    if travel_direction == "L2R":
+        direccion = "aumento"
+    else:
+        direccion = "disminuyo"
+    conn = http.client.HTTPSConnection("api.pushover.net:443")
+    
+    conn.request("POST", "/1/messages.json",
+        urllib.parse.urlencode({
+            "token": "acapirkf1hv5qqyp4d4nsqz1g5uku2",
+            "user": "uf2v8b7fwdkj1d4m36qx5gt1di4jcg",
+            "title": "Alerta de Flujo",
+            "message": "El flujo " + str(direccion) + " o hay presencia de burbujas",
+            "url": "",
+            "priority": "0"
+        }), {"Content-type": "application/x-www-form-urlencoded"})
+        
+    conn.getresponse()

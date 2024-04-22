@@ -1556,10 +1556,32 @@ def speed_camera():
                             # Write text on image before saving
                             # if required.
                             if IM_SHOW_TEXT_ON:
-                                image_text = "SPEED %.1f %s - %s" % (
-                                    ave_speed,
-                                    speed_units,
-                                    filename,
+                                medida = 0
+                                if end_pos_x <= 50:
+                                    medida = 1
+                                elif 80 >= end_pos_x > 50:
+                                    medida = 2
+                                elif 110 >= end_pos_x > 80:
+                                    medida = 3
+                                elif 140 >= end_pos_x > 110:
+                                    medida = 4
+                                elif 170 >= end_pos_x > 140:
+                                    medida = 5
+                                elif 200 >= end_pos_x > 170:
+                                    medida = 6
+                                elif 230 >= end_pos_x > 200:
+                                    medida = 7
+                                elif 260 >= end_pos_x > 230:
+                                    medida = 8
+                                elif 290 >= end_pos_x > 260:
+                                    medida = 9
+                                elif 320 >= end_pos_x > 290:
+                                    medida = 10
+                                    
+                                velocidad = ave_speed * 5/18
+                                image_text = "Movimiento a: %.2f m/s Ubicandose en: %s GPM" % (
+                                    velocidad,
+                                    medida,
                                 )
                                 text_x = int(
                                     (image_width / 2)
@@ -1629,7 +1651,7 @@ def speed_camera():
                                 # ===========================================
                                 try:
                                     user_motion_code.userMotionCode(
-                                        vs, image_width, image_height, filename
+                                        vs, image_width, image_height, filename,travel_direction 
                                     )
                                 except ValueError:
                                     logging.error(
