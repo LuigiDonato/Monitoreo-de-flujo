@@ -1,11 +1,10 @@
 #!/bin/bash
 # run.sh is a systemctl script to control webserver.py and writer.py
-# written by Claude Pageau  https://github.com/pageauc/speed-camera
 version="2.0"
 programs="speed-cam.py webserver.py"
 params="start, stop, restart, status, install, uninstall"
 
-echo "$0 ver $version  written by Claude Pageau"
+echo "$0 ver $version "
 echo "Control $programs"
 echo ""
 
