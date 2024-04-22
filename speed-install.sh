@@ -1,8 +1,7 @@
 #!/bin/bash
-# speed-install.sh script written by Claude Pageau 1-Jul-2016
 
 ver="13.18"
-SPEED_DIR='speed-camera'  # Default folder install location
+SPEED_DIR='Flow monitor'  # Default folder install location
 # Make sure ver below matches latest rclone ver on https://downloads.rclone.org/rclone-current-linux-arm.zip
 rclone_cur_ver="rclone v1.66.0"
 
@@ -215,7 +214,6 @@ To replace plugins rename plugins folder per below
 Then run menubox.sh UPGRADE menu pick.
 
 -----------------------------------------------
-For Detailed Instructions See https://github.com/pageauc/speed-camera/wiki
 $SPEED_DIR version $ver
-Good Luck Claude ...
+Good Luck ...
 Bye"
