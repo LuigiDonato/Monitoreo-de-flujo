@@ -19,12 +19,12 @@ fi
 # Remember where this script was launched from
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-cd $
+cd $SPEED_DIR
 INSTALL_PATH=$( pwd )
 mkdir -p media
 mkdir -p supervisor
 echo "-----------------------------------------------"
-echo "$STATUS speed-camera speed-install.sh ver $ver"
+echo "$STATUS Flow monitor Program-install.sh ver $ver"
 echo "-----------------------------------------------"
 echo "$STATUS Download GitHub Files"
 if $is_upgrade ; then
