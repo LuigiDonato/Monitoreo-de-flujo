@@ -54,7 +54,7 @@ for fname in "${speedFiles[@]}" ; do
     fi
 done
 wget -q --show-progress -nc https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/user_motion_code.py
-wget -O media/webserver.txt -q --show-progresshttps://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/webserver.txt
+wget -O media/webserver.txt -q --show-progress https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/webserver.txt
 
 if [ -f config.py ]; then     # check if local file exists.
     wget -O config.py.new -q --show-progress https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/config.py
