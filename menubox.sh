@@ -679,7 +679,7 @@ Note: sql_speed_gt.py uses gnuplot and has been superceded by
 #------------------------------------------------------------------------------
 function do_upgrade()
 {
-  if (whiptail --title "GitHub Upgrade speed-cam" \
+  if (whiptail --title "GitHub Upgrade " \
                --yesno "Upgrade speed-cam Files from GitHub.\n Some config Files Will be Updated" 0 0 0 \
             s   --yes-button "upgrade" \
                --no-button "Cancel" ); then
