@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ver="13.18"
-SPEED_DIR='Flow monitor'  # Default folder install location
+SPEED_DIR='Flow_monitor'  # Default folder install location
 # Make sure ver below matches latest rclone ver on https://downloads.rclone.org/rclone-current-linux-arm.zip
 rclone_cur_ver="rclone v1.66.0"
 
@@ -19,7 +19,7 @@ fi
 # Remember where this script was launched from
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-cd $SPEED_DIR
+cd $
 INSTALL_PATH=$( pwd )
 mkdir -p media
 mkdir -p supervisor
