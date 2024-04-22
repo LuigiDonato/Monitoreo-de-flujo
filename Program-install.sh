@@ -44,34 +44,34 @@ else
 fi
 
 for fname in "${speedFiles[@]}" ; do
-    wget_output=$(wget -O $fname -q --show-progress https://raw.github.com/pageauc/speed-camera/master/$fname)
+    wget_output=$(wget -O $fname -q --show-progress https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/$fname)
     if [ $? -ne 0 ]; then
         if [ $? -ne 0 ]; then
             echo "ERROR - $fname wget Download Failed. Possible Cause Internet Problem."
         else
-            wget -O $fname https://raw.github.com/pageauc/speed-camera/master/$fname
+            wget -O $fname https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/$fname
         fi
     fi
 done
-wget -q --show-progress -nc https://raw.github.com/pageauc/speed-camera/master/user_motion_code.py
-wget -O media/webserver.txt -q --show-progress https://raw.github.com/pageauc/speed-camera/master/webserver.txt
+wget -q --show-progress -nc https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/user_motion_code.py
+wget -O media/webserver.txt -q --show-progresshttps://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/webserver.txt
 
 if [ -f config.py ]; then     # check if local file exists.
-    wget -O config.py.new -q --show-progress https://raw.github.com/pageauc/speed-camera/master/config.py
+    wget -O config.py.new -q --show-progress https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/config.py
 else
-    wget -O config.py -q --show-progress https://raw.github.com/pageauc/speed-camera/master/config.py
+    wget -O config.py -q --show-progress https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/config.py
 fi
 
 if [ ! -f remote-run.sh ] ; then
-    wget -O watch-app.sh -q --show-progress https://raw.github.com/pageauc/speed-camera/master/watch-app.sh
+    wget -O watch-app.sh -q --show-progress https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/watch-app.sh
 fi
 
 if [ ! -f remote-run.sh ] ; then
-    wget -O remote-run.sh -q --show-progress https://raw.github.com/pageauc/speed-camera/master/remote-run.sh
+    wget -O remote-run.sh -q --show-progress https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/remote-run.sh
 fi
 
 if [ ! -f rclone-security-sync-recent.sh ] ; then
-    wget -O rclone-security-sync-recent.sh -q --show-progress https://raw.github.com/pageauc/speed-camera/master/rclone-security-sync-recent.sh
+    wget -O rclone-security-sync-recent.sh -q --show-progress https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/rclone-security-sync-recent.sh
 fi
 
 # Install plugins if not already installed.  You must delete a plugin file to force reinstall.
@@ -87,13 +87,13 @@ for fname in "${pluginFiles[@]}" ; do
   if [ -f $fname ]; then     # check if local file exists.
     echo "INFO  : $fname plugin Found.  Skip Download ..."
   else
-    wget_output=$(wget -O $fname -q --show-progress https://raw.github.com/pageauc/speed-camera/master/plugins/$fname)
+    wget_output=$(wget -O $fname -q --show-progress https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/plugins/$fname)
     if [ $? -ne 0 ]; then
-        wget_output=$(wget -O $fname -q https://raw.github.com/pageauc/speed-camera/master/plugins/$fname)
+        wget_output=$(wget -O $fname -q https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/plugins/$fname)
         if [ $? -ne 0 ]; then
             echo "ERROR : $fname wget Download Failed. Possible Cause Internet Problem."
         else
-            wget -O $fname "https://raw.github.com/pageauc/speed-camera/master/plugins/$fname"
+            wget -O $fname "https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/plugins/$fname"
         fi
     fi
   fi
@@ -109,13 +109,13 @@ rcloneFiles=("rclone-security-copy.sh" "rclone-security-sync.sh" "rclone-securit
 mkdir -p $RCLONE_DIR
 cd $RCLONE_DIR
 for fname in "${rcloneFiles[@]}" ; do
-    wget_output=$(wget -O $fname -q --show-progress https://raw.github.com/pageauc/speed-camera/master/rclone-samples/$fname)
+    wget_output=$(wget -O $fname -q --show-progress https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/rclone-samples/$fname)
     if [ $? -ne 0 ]; then
-        wget_output=$(wget -O $fname -q https://raw.github.com/pageauc/speed-camera/master/rclone-samples/$fname)
+        wget_output=$(wget -O $fname -q https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/rclone-samples/$fname)
         if [ $? -ne 0 ]; then
             echo "ERROR : $fname wget Download Failed. Possible Cause Internet Problem."
         else
-            wget -O $fname "https://raw.github.com/pageauc/speed-camera/master/rclone-samples/$fname"
+            wget -O $fname "https://raw.github.com/LuigiDonato/Monitoreo-de-flujo/main/rclone-samples/$fname"
         fi
     fi
 done
