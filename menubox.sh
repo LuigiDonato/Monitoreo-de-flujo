@@ -734,16 +734,8 @@ function do_main_menu ()
   "a $SPEED_1" "$SPEED_2" \
   "b $WEB_1" "$WEB_2" \
   "c SETTINGS" "Change speed_cam and webserver settings" \
-  "d PLUGINS" "Change plugins Settings" \
-  "e RCLONE" "Manage File Transfers to Remote Storage" \
-  "f HTML" "Make html pages from speed-cam.csv & jpgs" \
-  "g VIEW" "View speed-cam.csv File" \
-  "h SEARCH" "Images Search Menu (openCV Template Match)" \
   "i UPGRADE" "Program Files from GitHub.com" \
   "j STATUS" "CPU $temp   Select to Refresh" \
-  "k REPORTS" "Run Various sqlite3 Reports" \
-  "l HELP" "View Readme.md" \
-  "m ABOUT" "Information about this program" \
   "q QUIT" "Exit This Program"  3>&1 1>&2 2>&3)
 
   RET=$?
@@ -754,23 +746,10 @@ function do_main_menu ()
       a\ *) do_speed_cam ;;
       b\ *) do_webserver ;;
       c\ *) do_settings_menu ;;
-      d\ *) do_plugins_menu ;;
-      e\ *) do_sync_menu
-            do_main_menu ;;
-      f\ *) do_makehtml_menu ;;
-      g\ *) clear
-            more ./speed-cam.csv
-            do_anykey ;;
-      h\ *) do_speed_search_menu ;;
       i\ *) clear
             do_upgrade ;;
       j\ *) clear
             do_main_menu ;;
-      k\ *) do_report_menu ;;
-      l\ *) pandoc -f markdown -t plain  Readme.md | more -d
-            do_anykey
-            do_main_menu ;;
-      m\ *) do_about ;;
       q\ *) rm -f $filename_conf $filename_temp
             clear
             exit 0 ;;
