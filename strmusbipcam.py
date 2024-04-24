@@ -1,4 +1,3 @@
-# Written by Claude Pageau 18 Nov 2022
 # Import required libraries
 from threading import Thread
 import cv2
