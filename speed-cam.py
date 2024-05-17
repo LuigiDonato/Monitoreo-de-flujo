@@ -1,48 +1,5 @@
 #!/usr/bin/python3
-"""
-speed-cam.py written by Claude Pageau
-Windows, Unix, Raspberry (Pi) - python opencv2 Object Speed tracking
-using picamera module, Web Cam or RTSP IP Camera
-GitHub Repo at https://github.com/pageauc/speed-camera
-Post issue to Github.
 
-This is a python openCV object speed tracking demonstration program.
-It will detect speed in the field of view and use openCV to calculate the
-largest contour and return its x,y center coordinate.  The image is tracked for
-a specified loop count and the final speed is calculated.
-Note: Variables for this program are stored in config.py
-
-Some of this code is based on a YouTube tutorial by
-Kyle Hounslow using C here https://www.youtube.com/watch?v=X6rPdRZzgjg
-
-Thanks to Adrian Rosebrock jrosebr1 at http://www.pyimagesearch.com
-for the PiVideoStream Class code available on github at
-https://github.com/jrosebr1/imutils/blob/master/imutils/video/pivideostream.py
-
-Here is my YouTube video demonstrating a previous speed tracking demo
-program using a Raspberry Pi B2 https://youtu.be/09JS7twPBsQ
-and a fun speed lapse video https://youtu.be/-xdB_x_CbC8
-
-Installation
-------------
-Requires a Raspberry Pi or compatible, Windows, Unix PC or Mac with webcam or RTSP IP Camera.
-or a virtual machine unix distro eg Debian. Runs best under python3 but code is compatible with python2.
-Works with RPI camera module using picamera or libpicamera2 python module.
-See github wiki for detail https://github.com/pageauc/speed-camera/wiki
-
-Install from a GitHub download, Docker or using Curl install from logged in SSH session per commands below.
-Code should run on a non RPI platform using a Web Cam or RTSP ip cam
-
-    curl -L https://raw.github.com/pageauc/rpi-speed-camera/master/speed-install.sh | bash
-or
-    wget https://raw.github.com/pageauc/rpi-speed-camera/master/speed-install.sh
-    chmod +x speed-install.sh
-    ./speed-install.sh
-    ./speed-cam.py
-
-Note to Self - Look at eliminating python variable camel case and use all snake naming
-
-"""
 from __future__ import print_function
 PROG_VER = "13.2"  # current version of this python script
 print('Loading Wait...')
