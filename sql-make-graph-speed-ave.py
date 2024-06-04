@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 '''
-written by Claude Pageau
 Speed Camera Utility to create graph image files from
 the sqlite3 database data/speed_cam.db using matplotlib.
 
