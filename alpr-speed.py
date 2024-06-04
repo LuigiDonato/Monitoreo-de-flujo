@@ -44,7 +44,7 @@ sudo ln -s /usr/share/openalpr/runtime_data/ocr/tessdata/lus.traineddata /usr/sh
 See User Variables below to change default settings.
 
 Still a work in progress
-Good Luck Claude ....
+Good Luck  ....
 """
 from __future__ import print_function
 import sys
