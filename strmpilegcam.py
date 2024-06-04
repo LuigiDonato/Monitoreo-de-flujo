@@ -1,5 +1,3 @@
-# Written by Claude Pageau 18 Nov 2022 based on piimagesearch code
-
 # Import required libraries
 import sys
 import time
