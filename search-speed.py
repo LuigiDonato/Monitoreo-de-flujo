@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
-ver = "ver 5.60"  # Original issue on 26-Jul-2017 by Claude Pageau
+ver = "ver 5.60"  
 
 """
-speed-search.py written by Claude Pageau pageauc@gmail.com
+speed-search.py written 
 Raspberry (Pi) - python opencv2 find images matching search image using cv2 template matching
 GitHub Repo here https://github.com/pageauc/rpi-speed-camera/tree/master/
 
@@ -30,7 +30,6 @@ searching if you are looking for a specific image match. I have not implemented 
 results at this time.  Also the code still needs more work but thought it was
 good enough to release.
 
-Claude  ...
 
 """
 
