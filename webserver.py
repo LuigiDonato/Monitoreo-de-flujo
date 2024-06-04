@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 '''
-written by Claude Pageau See https://github.com/pageauc/speed-camera
 Tracks largest moving object in camera view and calculates speed based on calibration data.
 This webserver allows viewing images and reports
 '''
@@ -18,7 +17,7 @@ import urllib
 from http.server import SimpleHTTPRequestHandler
 from io import BytesIO
 
-PROG_VER = "ver 13.3 written by Claude Pageau modified by Alexandre Strube for python3 compatibility"
+PROG_VER = "ver 13.3  for python3 compatibility"
 
 SCRIPT_PATH = os.path.abspath(__file__)   # Find the full path of this python script
 BASE_DIR = os.path.dirname(SCRIPT_PATH)   # Get the path location only (excluding script name)
