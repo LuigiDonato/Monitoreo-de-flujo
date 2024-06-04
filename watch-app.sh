@@ -3,7 +3,7 @@ ver="7.10"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"  # get cur dir of this script
 progName=$(basename -- "$0")
 cd $DIR
-echo "$progName $ver  written by Claude Pageau"
+echo "$progName $ver  written by LCDONATO"
 
 #==================================
 #   watch-app.sh User Settings
@@ -86,7 +86,7 @@ function do_remote_config ()
             if [[ "$fname" == "reboot.force" ]]; then
                 # initialize reboot.force.done file
                 echo "$now INFO  : Creating $sync_dir/$fname.log Entry"
-                echo "$progName  written by Claude Pageau
+                echo "$progName  written by LCDONATO
 =========================================================
   To Force RPI Reboot. Rename this File to reboot.force
   On the remote storage name $rclone_name:
