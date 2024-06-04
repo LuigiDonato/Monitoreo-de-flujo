@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 """
-written by Claude Pageau
 Speed Camera Utility to create html report files from
 the sqlite3 database default data/speed_cam.db
 
@@ -48,7 +47,6 @@ eg
 
 %s 50 5
 
-Bye ...
 
 ''' % sys.argv[0])
 
